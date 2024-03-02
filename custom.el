@@ -29,3 +29,23 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+
+;;Makes write in Spanish easier 
+
+(defun insert-inverted-question-mark ()
+  "Insert inverted question mark."
+  (interactive)
+  (insert "¿ ?"))
+
+(defun insert-inverted-exclamation-mark ()
+  "Insert inverted exclamation mark."
+  (interactive)
+  (insert "¡ !"))
+
+(map! :leader
+      (:prefix "i"
+       :desc "Insert inverted question mark" "i" #'insert-inverted-question-mark)
+      (:prefix "i"
+       :desc "Insert inverted exclamation mark" "!" #'insert-inverted-exclamation-mark))
+
